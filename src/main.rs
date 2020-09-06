@@ -2,6 +2,13 @@ use std::io;
 use std::cmp::Ordering;
 use rand::Rng;
 
+fn useless(number: u32) -> bool {
+    if number > 0 {
+        return false;
+    } else {
+        return true;
+    }
+}
 fn main() {
     println!("Guess the number!");
 
@@ -24,7 +31,6 @@ fn main() {
             },
         };
 
-
         println!("You guessed: {}", guess);
 
         match guess.cmp(&secret_number) {
@@ -35,7 +41,8 @@ fn main() {
                 break;
             }
         }
-    }
 
+
+    }
 
 }

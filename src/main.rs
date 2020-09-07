@@ -1,13 +1,25 @@
-fn main() {
-    let number = 6;
+use std::process::exit;
 
-    if number % 4 == 0 {
-        println!("number is divisible by 4");
-    } else if number % 3 == 0 {
-        println!("number is divisible by 3");
-    } else if number % 2 == 0 {
-        println!("number is divisible by 2");
-    } else {
-        println!("number is not divisible by 4, 3, or 2");
+fn main() {
+
+    let nth_digit: i32 = 100;
+    let mut f_0: i128 = 1;  // f_n
+    let mut f_1 = 1;  // f_n+1
+    let mut index = 2;
+    println!("{}", 1);
+    println!("{}", 1);
+
+    if nth_digit == 1 || nth_digit == 2 {
+        println!("1");
+        exit(0);
     }
+    while index < nth_digit {
+        let tmp = f_0;
+        f_0 = f_1;
+        f_1 = tmp + f_1;
+        index += 1;
+        println!("{}", f_1)
+    }
+
+
 }
